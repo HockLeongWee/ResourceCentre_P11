@@ -208,6 +208,12 @@ public class ResourceCentre {
 		
 		boolean isLoaned = false;
 
+		isLoaned = doCamcorderListing(camcorderList, tag, dueDate, isLoaned);
+		return isLoaned;
+	}
+
+	private static boolean doCamcorderListing(ArrayList<Camcorder> camcorderList, String tag, String dueDate,
+			boolean isLoaned) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 			
 			String assetTag = camcorderList.get(i).getAssetTag();
