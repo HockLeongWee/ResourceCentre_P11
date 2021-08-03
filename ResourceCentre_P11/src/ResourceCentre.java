@@ -129,11 +129,11 @@ public class ResourceCentre {
 	public static String retrieveAllCamcorder(ArrayList<Camcorder> camcorderList) {
 		String output = "";
 
-		output = extracted(camcorderList, output);
+		output = CCList(camcorderList, output);
 		return output;
 	}
 
-	private static String extracted(ArrayList<Camcorder> camcorderList, String output) {
+	private static String CCList(ArrayList<Camcorder> camcorderList, String output) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 
 			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", camcorderList.get(i).getAssetTag(),
