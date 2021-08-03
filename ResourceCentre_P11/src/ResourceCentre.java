@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class ResourceCentre {
 
 
-	private static final int OPTION_LOAN = 3;
 	private static final int OPTION_ADD = 2;
 	private static final int OPTION_QUIT = 5;
 	public static void main(String[] args) {
@@ -51,7 +50,7 @@ public class ResourceCentre {
 					System.out.println("Invalid type");
 				}
 
-			} else if (option == OPTION_LOAN) {
+			} else if (option == 3) {
 				// Loan item
 				ResourceCentre.setHeader("LOAN");			
 				ResourceCentre.setHeader("ITEM TYPES");
@@ -130,6 +129,11 @@ public class ResourceCentre {
 	public static String retrieveAllCamcorder(ArrayList<Camcorder> camcorderList) {
 		String output = "";
 
+		output = extracted(camcorderList, output);
+		return output;
+	}
+
+	private static String extracted(ArrayList<Camcorder> camcorderList, String output) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 
 			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", camcorderList.get(i).getAssetTag(),
