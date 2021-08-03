@@ -244,6 +244,12 @@ public class ResourceCentre {
 		// write your code here
 		boolean isLoaned = false;
 
+		isLoaned = doChromebookListing(chromebookList, tag, dueDate, isLoaned);
+		return isLoaned;
+	}
+
+	private static boolean doChromebookListing(ArrayList<Chromebook> chromebookList, String tag, String dueDate,
+			boolean isLoaned) {
 		for (int i = 0; i < chromebookList.size(); i++) {
 			String assetTag = chromebookList.get(i).getAssetTag();
 			
